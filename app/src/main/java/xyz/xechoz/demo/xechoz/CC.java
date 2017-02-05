@@ -7,5 +7,5 @@ package xyz.xechoz.demo.xechoz;
  * 文档：
  */
 
-public class C {
+public class CC {
 }
