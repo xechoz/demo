@@ -1,5 +1,8 @@
 package xyz.xechoz.demo.animate;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
@@ -61,8 +64,30 @@ public class SlideLayout extends FrameLayout {
         }
     }
 
-    private void withViewProperty(View currentView, View slideView) {
+    private void withViewProperty(final View from, View to) {
+        to.setVisibility(INVISIBLE);
+        addView(to);
+        ObjectAnimator inAnim = ObjectAnimator.ofFloat(to, "translationY", -getMeasuredHeight(), 0);
+        inAnim.setInterpolator(new AccelerateDecelerateInterpolator());
+        inAnim.start();
+        to.setVisibility(VISIBLE);
 
+        ObjectAnimator outAnim = ObjectAnimator.ofFloat(from, "translationY", 0f, getMeasuredHeight());
+        outAnim.setInterpolator(new AccelerateDecelerateInterpolator());
+        outAnim.start();
+        outAnim.addListener(new AnimatorListenerAdapter() {
+            /**
+             * {@inheritDoc}
+             *
+             * @param animation
+             */
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+
+                removeView(from);
+            }
+        });
     }
 
     private void withViewCompat(View from, View to) {

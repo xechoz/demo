@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.setGravity(Gravity.CENTER);
                 textView.setWidth(slideLayout.getMeasuredWidth());
                 textView.setHeight(slideLayout.getMeasuredHeight());
-                SlideLayout.AnimateType type = SlideLayout.AnimateType.AnimateXml;
+                SlideLayout.AnimateType type = SlideLayout.AnimateType.AnimateProper;
                 slideLayout.addSlide(type, textView);
             }
         });
