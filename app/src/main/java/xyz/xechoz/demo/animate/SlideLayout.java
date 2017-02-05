@@ -30,6 +30,9 @@ import xyz.xechoz.demo.R;
  */
 
 public class SlideLayout extends FrameLayout {
+    private Animation animationIn;
+    private Animation animationOut;
+
     public SlideLayout(@NonNull Context context) {
         super(context);
     }
@@ -123,10 +126,16 @@ public class SlideLayout extends FrameLayout {
     }
 
 
-    Animation animationIn = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down_in);
-    Animation animationOut = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down_out);
 
     private void withAnimateXml(final View from, final View to) {
+        if (animationIn == null) {
+            animationIn = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down_in);
+        }
+
+        if (animationOut == null) {
+            animationOut = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down_out);
+        }
+
         if (to != null) {
             to.setVisibility(GONE);
             addView(to);
