@@ -1,9 +1,12 @@
 package xyz.xechoz.demo;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
+
+import com.orhanobut.logger.Logger;
 
 import butterknife.OnClick;
 import xyz.xechoz.demo.animate.SlideLayout;
@@ -14,7 +17,6 @@ public class MainActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
-
 
     @OnClick(R.id.slide_layout)
     void slideView(View view) {
