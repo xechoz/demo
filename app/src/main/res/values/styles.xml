@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="DotView">
+        <attr name="dotText" format="string|reference"/>
+        <attr name="dotVisible" format="boolean"/>
+        <attr name="dotGravity">
+            <flag name="left" value="1"/>
+            <flag name="top" value="2"/>
+            <flag name="right" value="4"/>
+            <flag name="bottom" value="8"/>
+        </attr>
+        <attr name="dotHeight" format="dimension|reference"/>
+        <attr name="dotWidth" format="dimension|reference"/>
+        <attr name="dotBackground" format="reference"/>
+        <attr name="dotTextColor" format="color|reference"/>
+        <attr name="dotTextSize" format="dimension|reference"/>
+        <attr name="dotMarginLeft" format="dimension|reference"/>
+        <attr name="dotMarginTop" format="dimension|reference"/>
+        <attr name="dotMarginRight" format="dimension|reference"/>
+        <attr name="dotMarginBottom" format="dimension|reference"/>
+    </declare-styleable>
 </resources>
