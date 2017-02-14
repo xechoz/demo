@@ -11,7 +11,7 @@ import java.util.List;
  * 文档:
  */
 
-public class GithubBaseResponse <T>{
+public class GithubBaseResponse <T> {
     @SerializedName(value = "total_count", alternate = {"totalCount"})
     public int totalCount;
 
