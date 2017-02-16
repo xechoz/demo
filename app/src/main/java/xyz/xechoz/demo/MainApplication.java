@@ -5,6 +5,9 @@ import android.content.Context;
 
 import com.orhanobut.logger.Logger;
 
+import xyz.xechoz.demo.database.DbApi;
+import xyz.xechoz.demo.thread.Async;
+
 /**
  * Created by xechoz.zheng on 2/7/17.
  * Email: zheng1733@gmail.com
@@ -22,7 +25,13 @@ public class MainApplication extends Application {
 
         context = this;
 
-        Logger.init(YOUR_TAG);
+        Async.getInstance().post(new Runnable() {
+            @Override
+            public void run() {
+                Logger.init(YOUR_TAG);
+                DbApi.getInstance().init(MainApplication.this);
+            }
+        });
     }
 
     public static Context getContext() {
