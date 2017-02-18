@@ -88,6 +88,10 @@ public class IndicatorView extends View implements ICustomView {
         ));
 
         lightingColorFilter = new LightingColorFilter(0x112233, 0x1122ff);
+        itemMargin = new Rect(4, 4, 4, 4);
+
+        itemWidth = Unit.dp2px(16);
+        itemHeight = Unit.dp2px(16);
     }
 
     @Override
@@ -128,6 +132,8 @@ public class IndicatorView extends View implements ICustomView {
             itemPaint.setColorFilter(lightingColorFilter);
             canvas.drawCircle((itemRect.left + itemRect.right) / 2f,
                     (itemRect.top + itemRect.bottom) / 2f, itemWidth / 2f, itemPaint);
+
+            canvas.drawRoundRect(itemRect, itemRect.width() / 2, itemRect.height() / 2, itemPaint);
         }
     }
 
