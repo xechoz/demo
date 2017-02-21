@@ -147,27 +147,30 @@ public class DotView extends FrameLayout implements ICustomView {
             @Override
             public void run() {
                 View view = getChildAt(0);
-                FrameLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
 
-                params.gravity = params.gravity == LayoutParams.UNSPECIFIED_GRAVITY ? 0: params.gravity;
+                if (view != null) {
+                    FrameLayout.LayoutParams params = (LayoutParams) view.getLayoutParams();
 
-                if ((dotGravity&GRAVITY_LEFT) != 0) {
-                    params.gravity += Gravity.RIGHT;
+                    params.gravity = params.gravity == LayoutParams.UNSPECIFIED_GRAVITY ? 0 : params.gravity;
+
+                    if ((dotGravity & GRAVITY_LEFT) != 0) {
+                        params.gravity += Gravity.RIGHT;
+                    }
+
+                    if ((dotGravity & GRAVITY_TOP) != 0) {
+                        params.gravity += Gravity.BOTTOM;
+                    }
+
+                    if ((dotGravity & GRAVITY_RIGHT) != 0) {
+                        params.gravity += Gravity.LEFT;
+                    }
+
+                    if ((dotGravity & GRAVITY_BOTTOM) != 0) {
+                        params.gravity += Gravity.TOP;
+                    }
+
+                    view.setLayoutParams(params);
                 }
-
-                if ((dotGravity&GRAVITY_TOP) != 0) {
-                    params.gravity += Gravity.BOTTOM;
-                }
-
-                if ((dotGravity&GRAVITY_RIGHT) != 0) {
-                    params.gravity += Gravity.LEFT;
-                }
-
-                if ((dotGravity&GRAVITY_BOTTOM) != 0) {
-                    params.gravity += Gravity.TOP;
-                }
-
-                view.setLayoutParams(params);
             }
         });
     }
