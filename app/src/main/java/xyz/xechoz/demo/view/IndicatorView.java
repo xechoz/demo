@@ -92,6 +92,20 @@ public class IndicatorView extends View implements ICustomView {
 
         itemWidth = Unit.dp2px(16);
         itemHeight = Unit.dp2px(16);
+
+        radius = itemWidth / 2f;
+
+        strokeWidth = Unit.dp2px(32);
+
+        colorFilter = new ColorMatrixColorFilter(new ColorMatrix(new float[]{
+                -1, 0, 0, 0, 255,
+                0, -1, 0, 0, 255,
+                0, 0, -1, 0, 255,
+                0, 0, 0, 1, 0
+        }
+        ));
+
+        lightingColorFilter = new LightingColorFilter(0x112233, 0x1122ff);
     }
 
     @Override
