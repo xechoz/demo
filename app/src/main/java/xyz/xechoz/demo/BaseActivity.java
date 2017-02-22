@@ -19,10 +19,19 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(getLayoutId());
+        int id = getLayoutId();
+
+        if (id != 0) {
+            setContentView(getLayoutId());
+        }
+
         ButterKnife.bind(this);
 
         initListener();
+        onInit(savedInstanceState);
+    }
+
+    protected void onInit(Bundle savedInstanceState) {
     }
 
     protected void initListener() {
