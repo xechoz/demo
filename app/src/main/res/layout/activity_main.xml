@@ -9,6 +9,7 @@
     tools:layout_editor_absoluteX="0dp">
 
     <TextView
+        android:id="@+id/button"
         android:autoLink="all"
         android:text="demo://xyz.xechoz.xyz/hello?a=1&amp;b=2"
         android:textSize="32sp"

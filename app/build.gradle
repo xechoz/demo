@@ -84,4 +84,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.orhanobut:logger:1.15'
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-lite
+    compile group: 'com.google.protobuf', name: 'protobuf-java', version: '2.6.1'
 }
