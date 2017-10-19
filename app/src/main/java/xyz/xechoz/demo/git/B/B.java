@@ -9,4 +9,7 @@ package xyz.xechoz.demo.git;
 
 public class B {
     // A: move B 
+    // B: hello
+
+    // B: word
 }
