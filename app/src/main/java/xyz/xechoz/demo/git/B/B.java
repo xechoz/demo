@@ -8,4 +8,5 @@ package xyz.xechoz.demo.git;
  */
 
 public class B {
+    // A: move B 
 }
