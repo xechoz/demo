@@ -8,4 +8,7 @@ package xyz.xechoz.demo.git;
  */
 
 public class A {
+    public interface {
+        void modifiedA();
+    }
 }
